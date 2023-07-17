@@ -181,20 +181,35 @@ const DrawSections = ({ id }: DrawSectionsProps) => {
                      </div> */}
                      <div className="mt-10">
                         <div className="row">
-                           <div className="md:col-4 md:offset-4">
-                              {hasWinner.map((item, index) => (
-                                 <div key={index} className="mb-4">
+                           {hasWinner.length === 10 ? (
+                              hasWinner.map((item, index) => (
+                                 <div key={index} className="mx-auto mb-4  md:col-5 ">
                                     <div className="flex space-x-4 rounded-full bg-white p-3 text-center text-[#29526a] rtl:space-x-reverse">
                                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#29526a] text-white">
                                           {index + 1}
                                        </div>
-                                       <div className="text-lg md:text-2xl">
+                                       <div className="text-md md:text-2xl">
                                           {item.first_name + ' ' + item.last_name}
                                        </div>
                                     </div>
                                  </div>
-                              ))}
-                           </div>
+                              ))
+                           ) : (
+                              <div className="md:col-4 md:offset-4">
+                                 {hasWinner.map((item, index) => (
+                                    <div key={index} className="mb-4">
+                                       <div className="flex space-x-4 rounded-full bg-white p-3 text-center text-[#29526a] rtl:space-x-reverse">
+                                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#29526a] text-white">
+                                             {index + 1}
+                                          </div>
+                                          <div className="text-md md:text-2xl">
+                                             {item.first_name + ' ' + item.last_name}
+                                          </div>
+                                       </div>
+                                    </div>
+                                 ))}
+                              </div>
+                           )}
                         </div>
                         <div className="row">
                            <div className="col-12 relative z-10 mx-auto mt-10 sm:col-8 md:col-6 lg:col-4">
