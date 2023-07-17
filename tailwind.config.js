@@ -133,6 +133,8 @@ module.exports = {
          backgroundImage: {
             bubble: "url('/images/bubble.svg')",
             sunburst: "url('/images/sunburst.svg')",
+            'lines-top': "url('/images/top_left.png')",
+            'lines-bottom': "url('/images/bottom_right.png')",
          },
       },
    },

@@ -1,3 +1,12 @@
 {
-    "home": "Home"
+    "home": "Home",
+    "draw_1_winner": "Draw 1 Winner 🎁",
+    "draw_3_winner": "Draw 3 Winners 🎁",
+    "draw_10_winner": "Draw 10 Winners 🎁",
+    "back_to_homepage": "Back to homepage",
+    "click_to_start": "Click to start",
+    "congratulations": "Congratulations 🎉",
+    "show_a_winner": "Revel the winners",
+    "draw": "Draw",
+    "reset": "Reset"
 }

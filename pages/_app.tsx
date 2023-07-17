@@ -2,7 +2,7 @@ import { AppProps } from 'next/app';
 import Layout from '~/components/layout';
 import { getLang } from '~/utils/translate';
 import { initGTM } from '~/utils/analytics';
-import { useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 import { AuthProvider } from '~/auth';
 import { motion } from 'framer-motion';
 
@@ -12,7 +12,7 @@ import transConfig from '~/translation.json';
 const { languages } = transConfig;
 
 import { NextPageContext, NextComponentType } from 'next';
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+// import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 import '../css/tailwind.css';
 import '../css/web.css';
@@ -70,10 +70,7 @@ const App = ({ Component, pageProps, router }: CustomAppProps) => {
    // const { isMiniHeaderFooterLayout, isHomePageLayout } = Component;
 
    return (
-      <GoogleReCaptchaProvider
-         language={lang}
-         reCaptchaKey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_KEY || ''}
-         scriptProps={{ defer: true }}>
+      <Fragment>
          <TranslationProvider lang={lang} translations={translations}>
             {/* <QueryClientProvider client={queryClient}> */}
             {/* <ThemeProvider enableSystem={true} attribute="class"> */}
@@ -157,7 +154,7 @@ const App = ({ Component, pageProps, router }: CustomAppProps) => {
             {/* </QueryClientProvider> */}
          </TranslationProvider>
          <Analytics />
-      </GoogleReCaptchaProvider>
+      </Fragment>
    );
 };
 

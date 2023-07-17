@@ -1,15 +1,9 @@
 // import { Translate, useTranslate } from '~/i18n';
 // import { motion } from 'framer-motion';
-import React, { useState } from 'react';
-// import CheckInvitationForm from '../join/check-invitation-form';
-// import Cookies from 'js-cookie';
-import ButtonBtn from '../shared/buttons/button-btn';
-// import list from 'data/MOCK_DATA.json';
-// import _, { flatten, forEach } from 'underscore';
-// import ReactRoller from 'react-random-roller';
-// import { useWindowResize } from 'react-advanced-cropper';
-// import useWindowSize from 'react-use/lib/useWindowSize';
-// import Confetti from 'react-confetti';
+import classNames from 'classnames';
+import React from 'react';
+import { NextLink, Translate } from '~/i18n';
+import Image from '../shared/image';
 
 /******************************************************************
  *
@@ -18,91 +12,58 @@ import ButtonBtn from '../shared/buttons/button-btn';
  ******************************************************************/
 
 const HomepageSections = () => {
-   const names = [
-      'Akshay',
-      'Silky',
-      'Mehran',
-      'Mitch',
-      'Oleksii',
-      'Ahmed',
-      'Breno',
-      'Sergey',
-      'Michal',
-      'Raphael',
-   ];
-   const interval = 50;
-
-   // const [interval, setInterval] = useState(false);
-   const [name, setName] = useState('');
-   const [isRendering, setIsRendering] = useState(false);
-   const [hasWinner, setHasWinner] = useState('');
-   // const { width, height } = useWindowResize();
-   React.useEffect(() => {
-      if (isRendering) {
-         const i = setInterval(() => {
-            setName(names[Math.floor(Math.random() * names.length)]);
-         }, interval);
-         return () => clearInterval(i);
-      }
-   });
-
-   const getWinner = () => {
-      setHasWinner(names[Math.floor(Math.random() * names.length)]);
-   };
-   const startOver = () => {
-      setHasWinner('');
-      setIsRendering(false);
-   };
    return (
       <section>
-         <div className="container  overflow-hidden  lg:py-20">
-            <div className="row  ">
-               <div className="col-12 py-20  text-center">
-                  <div className="relative   py-20">
-                     {hasWinner && (
-                        <div className="  absolute inset-0  z-0 mx-auto mt-5 h-[320px] w-[320px] animate-[spin_10s_linear_infinite] overflow-hidden bg-sunburst bg-contain bg-no-repeat   lg:-top-[100px] lg:h-[750px]  lg:w-[750px]"></div>
-                     )}{' '}
-                     <div className="relative z-10  ">
-                        <h2 className="stroke font-fancy text-5xl lg:text-7xl">Lucky Draw</h2>
-                     </div>
-                     <div className="c-box-shadow  relative inset-0  z-10  my-auto mx-auto mt-10 h-[65px] w-[275px]   rounded-[20px]  bg-[#ffbf1f] bg-bubble bg-contain bg-no-repeat p-3 lg:h-[180px] lg:w-[760px] lg:p-6 ">
-                        {/* <div className="h-full w-full rounded-[20px] bg-white">dfbk</div> */}
-                        <div className="rounded-[10px] bg-white p-[8px] lg:p-[40px]">
-                           <div className="lg:text-5xl">
-                              {isRendering ? (hasWinner ? hasWinner : name) : 'Click to start'}
-                           </div>
+         <div className="container lg:py-20">
+            <div className="row">
+               <div className="col-12 mx-auto pt-20  text-center">
+                  <div className="relative ">
+                     <div>
+                        <div className="mx-auto h-[130px] w-[290px] md:h-[200px] md:w-[440px]">
+                           <Image
+                              src="/images/zatca.png"
+                              alt="zatca logo"
+                              // width="150"
+                              // height="71"
+                              layout="fill"
+                              objectFit="contain"
+                              className=""
+                           />
                         </div>
                      </div>
-                     <div className="col-7 relative z-10 mx-auto mt-20 md:col-3">
-                        {isRendering ? (
-                           hasWinner ? (
-                              <ButtonBtn
-                                 id="submit-btn" //* for test cases
-                                 // loading={loading}
-                                 callBack={() => startOver()}
-                                 text={'reset'}
-                                 noIcon
-                              />
-                           ) : (
-                              <ButtonBtn
-                                 id="submit-btn" //* for test cases
-                                 // loading={loading}
-                                 callBack={() => getWinner()}
-                                 text={'Pick a winner'}
-                                 noIcon
-                              />
-                           )
-                        ) : (
-                           <ButtonBtn
-                              id="submit-btn" //* for test cases
-                              // loading={loading}
-                              callBack={() => setIsRendering(!isRendering)}
-                              text={'Draw'}
-                              noIcon
-                           />
-                        )}
-                     </div>
                   </div>
+               </div>
+            </div>
+            <div className="row pt-10 text-center">
+               <div className="mb-4 md:col-4">
+                  <NextLink
+                     href={`/draw/${1}`}
+                     className={classNames(
+                        'block rounded-md border border-white px-2 py-2 font-semibold text-white transition-colors duration-150  rtl:justify-end',
+                        'focus:border-white focus:outline-none focus:ring focus:ring-white focus:ring-opacity-50 '
+                     )}>
+                     <Translate id="web:draw_1_winner" />
+                  </NextLink>
+               </div>
+               <div className="mb-4 md:col-4">
+                  <NextLink
+                     href={`/draw/${3}`}
+                     className={classNames(
+                        'block rounded-md border border-white px-2 py-2 font-semibold text-white transition-colors duration-150  rtl:justify-end',
+                        'focus:border-white focus:outline-none focus:ring focus:ring-white focus:ring-opacity-50 '
+                     )}>
+                     <Translate id="web:draw_3_winner" />
+                  </NextLink>
+               </div>
+               <div className="mb-4 md:col-4">
+                  <NextLink
+                     href={`/draw/${10}`}
+                     className={classNames(
+                        'block rounded-md border border-white px-2 py-2 font-semibold text-white transition-colors duration-150  rtl:justify-end',
+                        'focus:border-white focus:outline-none focus:ring focus:ring-white focus:ring-opacity-50 '
+                     )}>
+                     <Translate id="web:draw_10_winner" />
+                  </NextLink>
                </div>
             </div>
          </div>

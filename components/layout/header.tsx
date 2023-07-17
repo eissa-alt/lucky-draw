@@ -19,7 +19,7 @@ const MiniHeader = () => {
 
    return (
       <header>
-         <div className="container md:px-12">
+         <div className="container">
             <div className="row py-8">
                <div className="col-6 self-center">
                   {/* <div className="h-[83px] w-[190px]">

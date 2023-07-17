@@ -5,7 +5,7 @@
 
 body {
    /* background-color: #936896; */
-   background-color: rgb(236, 66, 66);
+   background-color: #29526a;
    /* background-image: url(/images/bg-body.png); */
    background-position: center center;
    background-repeat: repeat;
@@ -99,16 +99,21 @@ textarea {
 .brand-bg {
    /* border-image: linear-gradient(to right, red, red); */
    background: rgb(226, 163, 40);
-   background: linear-gradient(-116deg,
-         rgba(226, 163, 40, 1) 14%,
-         rgba(0, 155, 152, 1) 67%,
-         rgba(0, 155, 152, 1) 100%);
+   background: linear-gradient(
+      -116deg,
+      rgba(226, 163, 40, 1) 14%,
+      rgba(0, 155, 152, 1) 67%,
+      rgba(0, 155, 152, 1) 100%
+   );
    border-width: 1px;
    border-style: solid;
-   border-image: linear-gradient(-116deg,
+   border-image: linear-gradient(
+         -116deg,
          rgba(226, 163, 40, 1) 14%,
          rgba(0, 155, 152, 1) 67%,
-         rgba(0, 155, 152, 1) 100%) 1;
+         rgba(0, 155, 152, 1) 100%
+      )
+      1;
 }
 
 [dir='ltr'] .polygon-btn {

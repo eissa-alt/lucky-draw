@@ -45,8 +45,9 @@ const ButtonBtn = ({
             className,
             'block w-full px-4 py-4 text-center text-2xl font-black leading-5 text-white transition-colors duration-150',
             (loading || disable) && 'disabled:cursor-not-allowed disabled:opacity-50 ',
-            'bg-[#ffbf1f]',
-            'c-box-shadow rounded-lg  '
+            'border border-white',
+            'rounded-lg shadow-sm  ',
+            'focus:border-white focus:outline-none focus:ring focus:ring-white focus:ring-opacity-50'
          )}>
          {noIcon ? (
             <span className="inline-flex">
